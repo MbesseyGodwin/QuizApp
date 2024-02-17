@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-100 h-screen flex flex-col justify-center items-center">
+    <div class="container mx-auto bg-white p-8 rounded-lg shadow-lg">
+        <h1 class="text-3xl font-bold mb-4">Quiz App</h1>
+        <label for="category" class="block mb-2">Select a category:</label>
+        <select id="category" class="w-full p-2 border border-gray-300 rounded-md mb-4">
+            <option value="math">Math</option>
+            <option value="science">Science</option>
+            <option value="history">History</option>
+        </select>
+        <button id="startBtn" onclick="startQuiz()" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+            Start Quiz
+        </button>
+        
+        <div id="quiz" style="display: none;" class="mt-8 text-center">
+            <h2 id="question" class="text-xl font-semibold mb-4"></h2>
+            <div id="options" class="space-y-2"></div>
+            <button onclick="nextQuestion()" class="bg-green-500 bg-green-500 text-white px-4 py-2 rounded-md mt-4 hover:bg-green-600 focus:outline-none focus:bg-green-600">
+                Next
+            </button>
+            <p class="mt-4">Live Score: <span id="score" class="font-semibold">0</span></p>
+        </div>
+
+        <div id="modal" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+            <div class="modal-content bg-white p-6 rounded-lg shadow-lg">
+              <button class="close-btn absolute bg-red-500 text-white px-4 py-2 rounded top-1 right-1 cursor-pointer">&times; end</button>
+              <h2 class="text-xl font-bold mb-4">Quiz Complete!</h2>
+              <p class="text-center">You Scored: <span id="final-score" class="font-semibold"></span></p>
+            </div>
+          </div>
+          
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
